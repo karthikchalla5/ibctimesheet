@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
                 if ($result2->num_rows > 0) {
                     // output data of each row
                     while ($row2 = $result2->fetch_assoc()) {
-                        $user_designation = $row2["designation"];
+                        $user_designation = $row2["designation"];                        
                     }
                 }
             }
@@ -35,10 +35,10 @@ if ($result->num_rows > 0) {
             //header("Location: add_user.php");
             session_start();
             $_SESSION['emp_id'] = $row["employee_id"];
-            if (($user_designation == "Admin") OR ( $user_designation == "Manager")) {
+            $_SESSION['designation'] = $user_designation;
+            if (($user_designation == "Admin") OR ( $user_designation == "Manager")) {                
                 echo $user_designation;
             } else {
-
                 echo $user_designation;
             }
             break;
