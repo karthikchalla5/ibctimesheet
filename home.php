@@ -131,14 +131,9 @@ if (isset($_SESSION['emp_id'])) {
                                 <i class="icon-caret-down"></i>
                             </a>
                             <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                                
                                 <li>
-                                    <a href="#">
-                                        <i class="icon-cog"></i>
-                                        Settings
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
+                                    <a href="employee_profile.php">
                                         <i class="icon-user"></i>
                                         Profile
                                     </a>
