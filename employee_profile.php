@@ -39,7 +39,7 @@ if (isset($_SESSION['emp_id'])) {
         <link rel="stylesheet" href="assets/css/colorpicker.css" />
         <link rel="stylesheet" href="assets/css/dropzone.css" />
         <link rel="stylesheet" href="assets/css/bootstrap-editable.css" />          
-
+        <link rel="stylesheet" href="assets/css/select2.css" />
         <!-- fonts -->
 
         <link rel="stylesheet" href="assets/css/ace-fonts.css" />
@@ -247,7 +247,7 @@ if (isset($_SESSION['emp_id'])) {
                                                             <span id="contact_number"><?php echo $r['contact_number']; ?></span>
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div class="profile-info-row">
                                                         <div class="profile-info-name"> Address </div>
 
@@ -315,8 +315,7 @@ if (isset($_SESSION['emp_id'])) {
     <script src="assets/js/date-time/moment.min.js"></script>
     <script src="assets/js/date-time/daterangepicker.min.js"></script>
     <script src="assets/js/x-editable/bootstrap-editable.min.js"></script>
-    <script src="assets/js/x-editable/ace-editable.min.js"></script>
-
+    <script src="assets/js/x-editable/ace-editable.min.js"></script>    
 
     <!-- ace scripts -->
 
@@ -328,17 +327,7 @@ if (isset($_SESSION['emp_id'])) {
     <script src="assets/js/jquery.validate.min.js"></script>
     <script src="js/employee_jqgrid.js"></script>
     <script src="js/task_status.js"></script>
-    <script src="js/ajax_calls_all.js"></script>
-    <!--script src="js/user_form_validations.js"></script>
-    <script src="js/project_form_validations.js"></script>
-    <script src="js/task_form_validations.js"></script>
-    <script src="js/project_employee.js"></script>
-    <script src="js/users_jqgrid.js"></script>
-    <script src="js/project_jqgrid.js"></script>
-    <script src="js/tasks_jqgrid.js"></script>
-<script src="js/task_modal.js"></script>
-    <script src="js/task_employee.js"></script>
-<script src="js/jquery.multi-select.js"></script-->     
+    <script src="js/ajax_calls_all.js"></script>    
     <!-- end basic script code -->
 
 </body>
