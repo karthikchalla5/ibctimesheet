@@ -163,7 +163,7 @@ include"connection.php";
                                         $project_value = $row['project_id'];
                                         $project_name = $row['project_name'];
                                         ?>
-                                        								<option value="<?PHP echo $project_value ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?PHP echo $project_name ?></option>
+                                                                                                                								<option value="<?PHP echo $project_value ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?PHP echo $project_name ?></option>
                                         <?PHP
                                     }
                                     mysqli_free_result($stmt);
