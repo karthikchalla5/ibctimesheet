@@ -2,6 +2,12 @@ jQuery(function ($) {
 
     $('#task_status').appendTo("body");
 
+    //editables on first profile page
+    $.fn.editable.defaults.mode = 'inline';
+    $.fn.editableform.loading = "<div class='editableform-loading'><i class='light-blue icon-2x icon-spinner icon-spin'></i></div>";
+    $.fn.editableform.buttons = '<button type="submit" class="btn btn-info editable-submit"><i class="icon-ok icon-white"></i></button>' +
+            '<button type="button" class="btn editable-cancel"><i class="icon-remove"></i></button>';
+    
     // *** editable avatar *** //
     try {//ie8 throws some harmless exception, so let's catch it
 
