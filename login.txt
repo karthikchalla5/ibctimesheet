@@ -1,0 +1,13 @@
+
+Admin:
+
+username: admin
+password: admin
+
+Employee:
+
+username: princemahesh134@gmail.com
+password: maheshbabu
+
+username: mahesh.pola@ideabytes.com
+password: karthik
