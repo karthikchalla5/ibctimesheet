@@ -136,8 +136,9 @@ if (isset($_SESSION['emp_id'])) {
                                 </a>
 
                                 <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                                    
                                     <li>
-                                        <a href="employee.php">
+                                        <a href="<?php print_r($_SERVER['HTTP_REFERER']); ?>">
                                             <i class="icon-home"></i>
                                             Home
                                         </a>
