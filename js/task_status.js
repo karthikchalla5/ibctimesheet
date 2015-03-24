@@ -11,7 +11,7 @@ jQuery(function ($) {
             $('#mail_password').addClass('hidden')
         }
     });
-    
+
     $('#task_status_form').validate({
         errorElement: 'div',
         errorClass: 'help-block',
@@ -69,10 +69,11 @@ jQuery(function ($) {
         invalidHandler: function (event, validator) {
             $('#task_status_form .error-block').removeClass('hidden');
         },
-        submitHandler: function (form) {
+        submitHandler: function (form) {            
+            
             $('#spinning').removeClass('hidden');
             var postData = $(form).serializeArray();
-            
+
             $.ajax(
                     {
                         url: "task_status.php",
