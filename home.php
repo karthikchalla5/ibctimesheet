@@ -1008,7 +1008,7 @@ if (isset($_SESSION['emp_id'])) {
                         <div class="footer-content">
                             <span class="bigger">
                                 <span class="blue bolder">Ideabytes Credential TimeSheet</span>
-                                Application © 2014-2015
+                                Application © 2015-2016
                             </span>                   
                         </div>
                     </div>

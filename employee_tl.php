@@ -124,13 +124,13 @@ if (isset($_SESSION['emp_id'])) {
                                 <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
                                 <span class="user-info">
                                     <small>Welcome,</small>
-									<?PHP
-										$que = mysqli_query($conn, "select * from employee where employee_id='" . $emp_id . "'");
-										while ($r = mysqli_fetch_array($que)) {
-											echo $r['employee_name'];
-										}
-										mysqli_free_result($que);
-									?>
+                                    <?PHP
+                                    $que = mysqli_query($conn, "select * from employee where employee_id='" . $emp_id . "'");
+                                    while ($r = mysqli_fetch_array($que)) {
+                                        echo $r['employee_name'];
+                                    }
+                                    mysqli_free_result($que);
+                                    ?>
                                 </span>
                                 <i class="icon-caret-down"></i>
                             </a>
@@ -174,7 +174,7 @@ if (isset($_SESSION['emp_id'])) {
                                         <!-- tab names begins -->
                                         <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab" style="">
                                             <!-- Home tag -->
-                                             <li class="active">
+                                            <li class="active">
                                                 <a data-toggle="tab" id="employee_home_anchor" href="#employee_home">
                                                     <i class="green icon-home bigger-110"></i>
                                                     Home                                                                                                                                                            
@@ -212,7 +212,7 @@ if (isset($_SESSION['emp_id'])) {
                                         <!-- tab names ends -->
                                         <!-- tab content begins -->
                                         <div class="tab-content">
-                                           <!-- Home tag content begins -->
+                                            <!-- Home tag content begins -->
                                             <div id="employee_home" class="tab-pane in active" align="center">                                                 
                                                 <div class="row">
                                                     <div class="col-sm-3" >
@@ -325,152 +325,152 @@ if (isset($_SESSION['emp_id'])) {
                                                     </div>
                                                 </div>                                                    
                                             </div>
-											<!-- Home tag content ends -->											
-											<!-- Modal Content Begins-->
-											<div id="task_status" class="modal fade" tabindex="-1">
-												<form id="task_status_form" name="task_status_form" method="POST" style="text-align:center">
-													<div class="modal-dialog">
-														<div class="modal-content">
-															<div class="modal-header">
-																<button type="button" class="close" data-dismiss="modal">&times;</button>
-																<h4 class="blue bigger" style="align:center"><b>Task Status</b></h4>
-															</div>
-															<div class="modal-body overflow-visible">
-																<div class="row">
-																	<div class="col-sm-2" ></div>
-																	<div class="col-sm-4" style="text-align:left"><label><b>Project Name<span class="red">*</span>:</b></label>
-																		<br>
-																		<input type="text" id="project_name" style="width:370px;"  value=""  name="project_name" readonly autocomplete="on"/>
-																		<input type="hidden" id="project_id"   value="" name="project_id"/>
-																	</div>
-																</div>
-																<div class="space-4"></div>
-																<div class="row">
-																	<div class="col-sm-2" ></div>
-																	<div class="col-sm-4" style="text-align:left"><label><b>Task Name<span class="red">*</span>:</b></label>
-																		<br>
-																		<textarea type="text" style="width:370px;" id="task_name" value="" name="task_name" readonly autocomplete="on"></textarea>
-																		<input type="hidden" id="task_id" value="" name="task_id"/>
-																	</div>
-																	<div class="col-sm-2" ></div>
-																</div>						
-																<div class="space-4"></div>
-																<div class="row">
-																	<div class="col-sm-2" ></div>
-																	<div class="col-sm-8" style="text-align:left"><label><b>Note</b></label>
-																		<br>
-																		<textarea  id="note"  style="width:370px;"  name="note" value="" placeholder="Note" autocomplete="on"></textarea>
-																	</div>
-																	<div class="col-sm-2" ></div>
-																</div>						
-																<div class="space-4"></div>
-																<div class="row">
-																	<div class="col-sm-2" ></div>
-																	<div class="col-sm-3" style="text-align:left"><label><b>Date<span class="red">*</span>:</b></label>
-																		<br>
-																		<input type="text" id="date"   name="date" value="<?PHP echo date("Y-m-d") ?>" style="width:100px;" readonly autocomplete="on"/>
-																	</div>
-																	<div class="col-sm-1" ></div>
-																	<div class="col-sm-4" style="text-align:left"><label><b>Time<span class="red">*</span>:</b></label>
-																		<br>
-																		<select id="hours"   name="hours" autocomplete="on"/>
-																		<option value="">HH   </option>
-																		<?PHP
-																		for ($i = 0; $i <= 24; $i = $i + 1) {
-																			$value = $i;
-																			?>
-																			<option value="<?PHP echo $value ?>"><?PHP echo $i ?></option>
-																			<?PHP
-																		}
-																		?>															
-																		</select>
+                                            <!-- Home tag content ends -->											
+                                            <!-- Modal Content Begins-->
+                                            <div id="task_status" class="modal fade" tabindex="-1">
+                                                <form id="task_status_form" name="task_status_form" method="POST" style="text-align:center">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                <h4 class="blue bigger" style="align:center"><b>Task Status</b></h4>
+                                                            </div>
+                                                            <div class="modal-body overflow-visible">
+                                                                <div class="row">
+                                                                    <div class="col-sm-2" ></div>
+                                                                    <div class="col-sm-4" style="text-align:left"><label><b>Project Name<span class="red">*</span>:</b></label>
+                                                                        <br>
+                                                                        <input type="text" id="project_name" style="width:370px;"  value=""  name="project_name" readonly autocomplete="on"/>
+                                                                        <input type="hidden" id="project_id"   value="" name="project_id"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="space-4"></div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-2" ></div>
+                                                                    <div class="col-sm-4" style="text-align:left"><label><b>Task Name<span class="red">*</span>:</b></label>
+                                                                        <br>
+                                                                        <textarea type="text" style="width:370px;" id="task_name" value="" name="task_name" readonly autocomplete="on"></textarea>
+                                                                        <input type="hidden" id="task_id" value="" name="task_id"/>
+                                                                    </div>
+                                                                    <div class="col-sm-2" ></div>
+                                                                </div>						
+                                                                <div class="space-4"></div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-2" ></div>
+                                                                    <div class="col-sm-8" style="text-align:left"><label><b>Note</b></label>
+                                                                        <br>
+                                                                        <textarea  id="note"  style="width:370px;"  name="note" value="" placeholder="Note" autocomplete="on"></textarea>
+                                                                    </div>
+                                                                    <div class="col-sm-2" ></div>
+                                                                </div>						
+                                                                <div class="space-4"></div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-2" ></div>
+                                                                    <div class="col-sm-3" style="text-align:left"><label><b>Date<span class="red">*</span>:</b></label>
+                                                                        <br>
+                                                                        <input type="text" id="date"   name="date" value="<?PHP echo date("Y-m-d") ?>" style="width:100px;" readonly autocomplete="on"/>
+                                                                    </div>
+                                                                    <div class="col-sm-1" ></div>
+                                                                    <div class="col-sm-4" style="text-align:left"><label><b>Time<span class="red">*</span>:</b></label>
+                                                                        <br>
+                                                                        <select id="hours"   name="hours" autocomplete="on"/>
+                                                                        <option value="">HH   </option>
+                                                                        <?PHP
+                                                                        for ($i = 0; $i <= 24; $i = $i + 1) {
+                                                                            $value = $i;
+                                                                            ?>
+                                                                            <option value="<?PHP echo $value ?>"><?PHP echo $i ?></option>
+                                                                            <?PHP
+                                                                        }
+                                                                        ?>															
+                                                                        </select>
 
-																		<select id="minutes"   name="minutes" autocomplete="on"/>
-																		<option value="00">MM   </option>
-																		<?PHP
-																		for ($i = 0; $i <= 60; $i = $i + 5) {
-																			if ($i < 10) {
-																				$value = $i = "0" . $i;
-																			} else {
-																				$value = $i;
-																			}
-																			?>
-																			<option value="<?PHP echo $value ?>"><?PHP echo $i ?></option>
-																			<?PHP
-																		}
-																		?>															
-																		</select>
-																	</div>
-																	<div class="col-sm-2" ></div>
-																</div>
-																<div class="space-4"></div>
-																<div class="row">
-																	<div class="col-sm-2" ></div>
-																	<div class="col-sm-4" style="text-align:left"><label><b>Type<span class="red">*</span>:</b></label>
-																		<br>
-																		<select id="type" name="type" autocomplete="on">
-																			<option value="">Select</option>
-																			<option value="coding">Coding</option>
-																			<option value="analysis">Analysis</option>
-																			<option value="testing">Testing</option>
-																		</select>
-																	</div>
-																	<div class="col-sm-4" style="text-align:left" id="status"><label><b>Status</b></label>
-																		<br>
-																		<select id="status" name="status" autocomplete="on">
-																			<option value="inprogress">Inprogress</option>
-																			<option value="completed">Completed</option>																			
-																			<option value="onhold">Onhold</option>																			
-																		</select>
-																	</div>
-																	<div class="col-sm-4" ></div>																	
-																</div>
-																<div class="space-12"></div>
-																<div class="row">
-																	<div class="col-sm-2" ></div>
-																	<div class="col-sm-10" style="text-align:left">
-																		<div id="mail_password" class="hidden" ><label><b>Official mail id Password<span class="red">*</span>:</b></label>
-																			<input type="password" id="employee_mail_password"   value="" name="employee_mail_password" />
-																		</div>
-																	</div>
-																</div>
-																<div class="space-4"></div>
-																<div id="spinning" class="row hidden">
-																	<h3 class="header smaller lighter grey">
-																		Processing Request. . 
-																		<i class="icon-spinner icon-spin orange bigger-125"></i>                                                            
-																	</h3>
-																</div>                                                            
-																<div class="space-4"></div>
-																<div id="error8" class="error-block alert alert-danger hidden">
-																	<i class="icon-remove"></i> <span class="message">  </span>
-																</div> 
-																<div id="success8" class="alert alert-block alert-success hidden">
-																	<button type="button" class="close" data-dismiss="alert">
-																		<i class="icon-remove"></i>
-																	</button>
+                                                                        <select id="minutes"   name="minutes" autocomplete="on"/>
+                                                                        <option value="00">MM   </option>
+                                                                        <?PHP
+                                                                        for ($i = 0; $i <= 60; $i = $i + 5) {
+                                                                            if ($i < 10) {
+                                                                                $value = $i = "0" . $i;
+                                                                            } else {
+                                                                                $value = $i;
+                                                                            }
+                                                                            ?>
+                                                                            <option value="<?PHP echo $value ?>"><?PHP echo $i ?></option>
+                                                                            <?PHP
+                                                                        }
+                                                                        ?>															
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-sm-2" ></div>
+                                                                </div>
+                                                                <div class="space-4"></div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-2" ></div>
+                                                                    <div class="col-sm-4" style="text-align:left"><label><b>Type<span class="red">*</span>:</b></label>
+                                                                        <br>
+                                                                        <select id="type" name="type" autocomplete="on">
+                                                                            <option value="">Select</option>
+                                                                            <option value="coding">Coding</option>
+                                                                            <option value="analysis">Analysis</option>
+                                                                            <option value="testing">Testing</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-sm-4" style="text-align:left" id="status"><label><b>Status</b></label>
+                                                                        <br>
+                                                                        <select id="status" name="status" autocomplete="on">
+                                                                            <option value="inprogress">Inprogress</option>
+                                                                            <option value="completed">Completed</option>																			
+                                                                            <option value="onhold">Onhold</option>																			
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-sm-4" ></div>																	
+                                                                </div>
+                                                                <div class="space-12"></div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-2" ></div>
+                                                                    <div class="col-sm-10" style="text-align:left">
+                                                                        <div id="mail_password" class="hidden" ><label><b>Official mail id Password<span class="red">*</span>:</b></label>
+                                                                            <input type="password" id="employee_mail_password"   value="" name="employee_mail_password" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="space-4"></div>
+                                                                <div id="spinning" class="row hidden">
+                                                                    <h3 class="header smaller lighter grey">
+                                                                        Processing Request. . 
+                                                                        <i class="icon-spinner icon-spin orange bigger-125"></i>                                                            
+                                                                    </h3>
+                                                                </div>                                                            
+                                                                <div class="space-4"></div>
+                                                                <div id="error8" class="error-block alert alert-danger hidden">
+                                                                    <i class="icon-remove"></i> <span class="message">  </span>
+                                                                </div> 
+                                                                <div id="success8" class="alert alert-block alert-success hidden">
+                                                                    <button type="button" class="close" data-dismiss="alert">
+                                                                        <i class="icon-remove"></i>
+                                                                    </button>
 
-																	<p>
-																		<span class="message">  </span>
-																	</p>                                                       
-																</div>
+                                                                    <p>
+                                                                        <span class="message">  </span>
+                                                                    </p>                                                       
+                                                                </div>
 
-															</div>
-															<div class="modal-footer">  
-																<button class="btn btn-sm" data-dismiss="modal">
-																	<i class="icon-remove"></i>
-																	Cancel
-																</button>
-																<button class="btn btn-sm btn-primary">
-																	<i class="icon-ok"></i>
-																	Save
-																</button>
-															</div>
-														</div>
-													</div>
-												</form>
-											</div>
-											<!-- Modal Content Ends-->
+                                                            </div>
+                                                            <div class="modal-footer">  
+                                                                <button class="btn btn-sm" data-dismiss="modal">
+                                                                    <i class="icon-remove"></i>
+                                                                    Cancel
+                                                                </button>
+                                                                <button class="btn btn-sm btn-primary">
+                                                                    <i class="icon-ok"></i>
+                                                                    Save
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!-- Modal Content Ends-->
                                             <!-- Task tag content begins -->
                                             <!-- add_task begins-->
                                             <div class="tab-pane">
@@ -490,18 +490,20 @@ if (isset($_SESSION['emp_id'])) {
                                                                         <div class="col-sm-8" style="text-align:left" >
                                                                             <select style="width:500px; height:31px;" id="project_id" name="project_id">
                                                                                 <option value="">Select</option>
-																				<?PHP
-																					$query = "select * from project ";
-																					if ($stmt = mysqli_query($conn, $query)) {
-																						while ($row = mysqli_fetch_array($stmt)) {
-																							$project_value = $row['project_id'];
-																							$project_name = $row['project_name'];
-																				?>
-                                                                                        <option value="<?PHP echo $project_value ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?PHP echo $project_name ?></option>
                                                                                 <?PHP
-																						}
-																						mysqli_free_result($stmt);
-																					}
+                                                                                $query = "select * from project where project_id IN (select project_id from project_employee WHERE role = 2 AND employee_id = " . $emp_id . ")";
+                                                                                if ($stmt = mysqli_query($conn, $query)) {
+                                                                                    while ($row = mysqli_fetch_array($stmt)) {
+                                                                                        $project_value = $row['project_id'];
+                                                                                        $project_name = $row['project_name'];
+                                                                                        ?>
+                                                                                        <option value="<?PHP echo $project_value ?>"><?PHP echo $project_name ?></option>
+                                                                                        <?PHP
+                                                                                    }
+                                                                                    mysqli_free_result($stmt);
+                                                                                } else {
+                                                                                    echo mysqli_error($conn);
+                                                                                }
                                                                                 ?>															
                                                                             </select>
                                                                         </div>
@@ -712,18 +714,18 @@ for ($i = 0; $i <= 100; $i = $i + 5) {
                                                             <div class="col-sm-5" style="text-align:left" >
                                                                 <select style="width:100%; height:31px;" id="assign_project_task_id" name="assign_project_task_id" >
                                                                     <option value="">Select</option>
-																	<?PHP
-																		$query = "select * from project ";
-																		if ($stmt = mysqli_query($conn, $query)) {
-																			while ($row = mysqli_fetch_array($stmt)) {
-																				$project_value = $row['project_id'];
-																				$project_name = $row['project_name'];
-																	?>
+<?PHP
+$query = "select * from project where project_id IN (select project_id from project_employee WHERE role = 2 AND employee_id = " . $emp_id . ")";
+if ($stmt = mysqli_query($conn, $query)) {
+    while ($row = mysqli_fetch_array($stmt)) {
+        $project_value = $row['project_id'];
+        $project_name = $row['project_name'];
+        ?>
                                                                             <option value="<?PHP echo $project_value ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?PHP echo $project_name ?></option>
-                                                                    <?PHP
-																			}
-																			mysqli_free_result($stmt);
-																		}
+                                                                            <?PHP
+                                                                        }
+                                                                        mysqli_free_result($stmt);
+                                                                    }
                                                                     ?>															
                                                                 </select>
                                                             </div>
@@ -823,18 +825,18 @@ for ($i = 0; $i <= 100; $i = $i + 5) {
                     </div> <!-- row -->				
                 </div><!-- page-content -->				
             </div><!-- page-content -->	
-				<div class="footer " align="right">
-					<div class="footer-inner">
-						<div class="footer-content">
-							<span class="bigger">
-								<span class="blue bolder">Ideabytes Credential TimeSheet</span>
-								Application © 2014-2015
-							</span>                   
-						</div>
-					</div>
-				</div>
-			</div><!-- main-container-inner -->
-		</div><!-- /.main-container -->
+            <div class="footer " align="right">
+                <div class="footer-inner">
+                    <div class="footer-content">
+                        <span class="bigger">
+                            <span class="blue bolder">Ideabytes Credential TimeSheet</span>
+                            Application © 2015-2016
+                        </span>                   
+                    </div>
+                </div>
+            </div>
+        </div><!-- main-container-inner -->
+    </div><!-- /.main-container -->
     <!-- basic scripts -->
     <!--[if !IE]> -->
     <script type="text/javascript">
@@ -887,16 +889,11 @@ for ($i = 0; $i <= 100; $i = $i + 5) {
     <script src="js/employee_jqgrid.js"></script>
     <script src="js/task_status.js"></script>
     <script src="js/ajax_calls_all.js"></script>    
-    <script src="js/user_form_validations.js"></script>
-    <script src="js/project_form_validations.js"></script>
     <script src="js/task_form_validations.js"></script>
-    <script src="js/project_employee.js"></script>
-    <script src="js/users_jqgrid.js"></script>
-    <script src="js/project_jqgrid.js"></script>
-    <script src="js/tasks_jqgrid.js"></script>
-	<script src="js/task_modal.js"></script>
+    <script src="js/tl_tasks_jqgrid.js"></script>
+    <script src="js/task_modal.js"></script>
     <script src="js/task_employee.js"></script>
-	<script src="js/jquery.multi-select.js"></script>     
+    <script src="js/jquery.multi-select.js"></script>     
     <!-- end basic script code -->
 
 </body>
