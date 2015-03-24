@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
         <meta charset="utf-8" />
         <title>404 Error Page - Ideabytes Credential Timesheet</title>
 
