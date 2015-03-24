@@ -54,7 +54,7 @@ if (empty($_POST["employee_id"])) {
                 $child_employee_name = $r['employee_name'];
                 $child_employee_email = $r['official_mail_id'];
                 if ($child_employee_email != NULL) {
-                    $sql = "INSERT INTO project_employee_task (project_id,task_id,employee_id) VALUES ('" . $project_id . "', '" . $task_id . "', '" . $child_employee_id[$i] . "')";
+                    $sql = "INSERT INTO project_employee_task (project_id,task_id,employee_id,assigned_by) VALUES ('" . $project_id . "', '" . $task_id . "', '" . $child_employee_id[$i] . "','" . $parent_employee_id[$i] . "')";
                     $status = "Assigned";
                     $sql1 = "UPDATE tasks SET status='" . $status . "' WHERE task_id='" . $task_id . "' AND project_id='" . $project_id . "'";
 

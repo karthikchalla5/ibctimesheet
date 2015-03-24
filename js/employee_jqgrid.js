@@ -199,18 +199,19 @@ jQuery(function ($) {
         $('#task_status_form').trigger('reset');
         $('#error8').addClass('hidden');
         $('#success8').addClass('hidden');
+        $('#mail_password').addClass('hidden');
         $('#project_id').val(data.project_id);
         $('#project_name').val(data.project_name);
         $('#task_id').val(data.task_id);
         $('#task_name').val(data.task_name);
-        $('#status').val(data.status);
+        //$('#status').val(data.status);
     });
 
 
 
     function myOptions(cellvalue, options, rowObject)
     {
-        return "<a data-toggle='modal' class='task_status' id='task_status_anchor' href='#task_status' data-todo='{\"project_id\":" + rowObject.project_id + ",\"project_name\":\"" + rowObject.project_name + "\",\"task_id\":" + rowObject.task_id + ",\"task_name\":\"" + rowObject.task_name + "\",\"status\":\"" + rowObject.status + "\"}'>" + cellvalue + "</a>";
+        return "<a data-toggle='modal' class='task_status' id='task_status_anchor' href='#task_status' data-todo='{\"project_id\":" + rowObject.project_id + ",\"project_name\":\"" + rowObject.project_name + "\",\"task_id\":" + rowObject.task_id + ",\"task_name\":\"" + rowObject.task_name + "\"}'>" + cellvalue + "</a>";
     }
 
     var timeoutHnd;
