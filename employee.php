@@ -461,7 +461,7 @@ if (isset($_SESSION['emp_id'])) {
                     </div><!-- col -->						
                 </div> <!-- row -->				
             </div><!-- page-content -->	
-            <div class="footer">
+            <div class="footer center">
                 <div class="footer-inner">
                     <div class="footer-content">
                         <span class="bigger">
