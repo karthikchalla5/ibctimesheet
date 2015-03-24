@@ -91,6 +91,7 @@ jQuery(function ($) {
                             {
                                 window.location = "home.php";
                             }
+
                         },
                         error: function (jqXHR, textStatus, errorThrown)
                         {
