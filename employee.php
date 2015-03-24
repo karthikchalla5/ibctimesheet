@@ -325,10 +325,10 @@ if (isset($_SESSION['emp_id'])) {
                                                                     <input type="text" id="project_name" style="width:370px;"  value=""  name="project_name" readonly autocomplete="on"/>
                                                                     <input type="hidden" id="project_id"   value="" name="project_id"/>
                                                                 </div>
-															</div>
-															  <div class="space-4"></div>
-															<div class="row">
-																<div class="col-sm-2" ></div>
+                                                            </div>
+                                                            <div class="space-4"></div>
+                                                            <div class="row">
+                                                                <div class="col-sm-2" ></div>
                                                                 <div class="col-sm-4" style="text-align:left"><label><b>Task Name<span class="red">*</span>:</b></label>
                                                                     <br>
                                                                     <textarea type="text" style="width:370px;" id="task_name" value="" name="task_name" readonly autocomplete="on"></textarea>
@@ -460,10 +460,19 @@ if (isset($_SESSION['emp_id'])) {
                         <!-- PAGE CONTENT ENDS -->						
                     </div><!-- col -->						
                 </div> <!-- row -->				
-            </div><!-- page-content -->				
-        </div><!-- main-container-inner -->			
+            </div><!-- page-content -->	
+            <div class="footer">
+                <div class="footer-inner">
+                    <div class="footer-content">
+                        <span class="bigger">
+                            <span class="blue bolder">Ideabytes Credential TimeSheet</span>
+                            Application © 2014-2015
+                        </span>                   
+                    </div>
+                </div>
+            </div>
+        </div><!-- main-container-inner -->
     </div><!-- /.main-container -->
-
     <!-- basic scripts -->
     <!--[if !IE]> -->
     <script type="text/javascript">
