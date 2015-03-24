@@ -58,7 +58,7 @@ jQuery(function ($) {
                         data: postData,
                         success: function (data, textStatus, jqXHR)
                         {
-                            alert(data);
+                            //alert(data);
                             if ($.trim(data) == "Admin")
                             {
                                 window.location = "home.php";

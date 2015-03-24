@@ -4,7 +4,7 @@ SESSION_start();
 if (isset($_SESSION['emp_id'])) {
     $emp_id = $_SESSION['emp_id'];
     if (isset($_SESSION['designation'])) {
-        if ($_SESSION['designation'] != 'Developer') {            
+        if ($_SESSION['designation'] != 'Developer') {
             header("location: ./error-404.php");
         }
     }
@@ -128,13 +128,13 @@ if (isset($_SESSION['emp_id'])) {
                                 <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
                                 <span class="user-info">
                                     <small>Welcome,</small>
-<?PHP
-$que = mysqli_query($conn, "select * from employee where employee_id='" . $emp_id . "'");
-while ($r = mysqli_fetch_array($que)) {
-    echo $r['employee_name'];
-}
-mysqli_free_result($que);
-?>
+                                    <?PHP
+                                    $que = mysqli_query($conn, "select * from employee where employee_id='" . $emp_id . "'");
+                                    while ($r = mysqli_fetch_array($que)) {
+                                        echo $r['employee_name'];
+                                    }
+                                    mysqli_free_result($que);
+                                    ?>
                                 </span>
 
                                 <i class="icon-caret-down"></i>
@@ -353,10 +353,10 @@ mysqli_free_result($que);
                                                                     <br>
                                                                     <select id="hours"   name="hours" autocomplete="on"/>
                                                                     <option value="">HH   </option>
-<?PHP
-for ($i = 0; $i <= 24; $i = $i + 1) {
-    $value = $i;
-    ?>
+                                                                    <?PHP
+                                                                    for ($i = 0; $i <= 24; $i = $i + 1) {
+                                                                        $value = $i;
+                                                                        ?>
                                                                         <option value="<?PHP echo $value ?>"><?PHP echo $i ?></option>
                                                                         <?PHP
                                                                     }
@@ -365,14 +365,14 @@ for ($i = 0; $i <= 24; $i = $i + 1) {
 
                                                                     <select id="minutes"   name="minutes" autocomplete="on"/>
                                                                     <option value="00">MM   </option>
-<?PHP
-for ($i = 0; $i <= 60; $i = $i + 5) {
-    if ($i < 10) {
-        $value = $i = "0" . $i;
-    } else {
-        $value = $i;
-    }
-    ?>
+                                                                    <?PHP
+                                                                    for ($i = 0; $i <= 60; $i = $i + 5) {
+                                                                        if ($i < 10) {
+                                                                            $value = $i = "0" . $i;
+                                                                        } else {
+                                                                            $value = $i;
+                                                                        }
+                                                                        ?>
                                                                         <option value="<?PHP echo $value ?>"><?PHP echo $i ?></option>
                                                                         <?PHP
                                                                     }
@@ -393,16 +393,24 @@ for ($i = 0; $i <= 60; $i = $i + 5) {
                                                                         <option value="testing">Testing</option>
                                                                     </select>
                                                                 </div>
-                                                                <div class="col-sm-4" style="text-align:left"><label><b>Status</b></label>
+                                                                <div class="col-sm-4" style="text-align:left" id="status"><label><b>Status</b></label>
                                                                     <br>
                                                                     <select id="status" name="status" autocomplete="on">
-                                                                        <option value="">Select</option>
                                                                         <option value="inprogress">Inprogress</option>
                                                                         <option value="completed">Completed</option>																			
                                                                         <option value="onhold">Onhold</option>																			
                                                                     </select>
                                                                 </div>
+                                                                <div class="col-sm-4" ></div>																	
+                                                            </div>
+                                                            <div class="space-12"></div>
+                                                            <div class="row">
                                                                 <div class="col-sm-2" ></div>
+                                                                <div class="col-sm-10" style="text-align:left">
+                                                                    <div id="mail_password" class="hidden" ><label><b>Official mail id Password<span class="red">*</span>:</b></label>
+                                                                        <input type="password" id="employee_mail_password"   value="" name="employee_mail_password" />
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                             <div class="space-4"></div>
                                                             <div id="error8" class="error-block alert alert-danger hidden">

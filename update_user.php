@@ -70,7 +70,7 @@ switch ($_POST["oper"]) {
                         echo "C";
                     }
                 } else {
-                    $sql1 = "UPDATE signin SET username='" . $official_mail_id . "', password=' ' WHERE employee_id='" . $employee_id . "'";
+                    $sql1 = "UPDATE signin SET username='" . $official_mail_id . "' WHERE employee_id='" . $employee_id . "'";
                     if (mysqli_query($conn, $sql1)) {
                         echo "C";
                     }

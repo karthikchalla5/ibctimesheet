@@ -2,12 +2,23 @@ jQuery(function ($) {
 
     $('#task_status').appendTo("body");
 
+    $('#status').on('change', function () {
+        //alert($( "#status option:selected" ).val());
+        if ($("#status option:selected").val() == "completed") {
+            $('#mail_password').removeClass('hidden');
+        }
+        else {
+            $('#mail_password').addClass('hidden')
+        }
+    });
+
+
     //editables on first profile page
     $.fn.editable.defaults.mode = 'inline';
     $.fn.editableform.loading = "<div class='editableform-loading'><i class='light-blue icon-2x icon-spinner icon-spin'></i></div>";
     $.fn.editableform.buttons = '<button type="submit" class="btn btn-info editable-submit"><i class="icon-ok icon-white"></i></button>' +
             '<button type="button" class="btn editable-cancel"><i class="icon-remove"></i></button>';
-    
+
     // *** editable avatar *** //
     try {//ie8 throws some harmless exception, so let's catch it
 
@@ -178,14 +189,24 @@ jQuery(function ($) {
                             if ($.trim(data) == "Task status updated.")
                             {
                                 $('#employee_home_anchor').click();
-                                $('#task_status_anchor').click();
-
+                                $('#task_status_form .alert-block').removeClass('hidden');
+                                $('#task_status_form .alert-block .message').html(data);
+                            }
+                            else if ($.trim(data) == "Task status updated and mail has been sent to Your Respective Mentor")
+                            {
+                                $('#employee_home_anchor').click();
+                                $('#task_status_form .alert-block').removeClass('hidden');
+                                $('#task_status_form .alert-block .message').html(data);
+                            }
+                            else if ($.trim(data) == "Task status updated but no mail ID has been found for the selected user")
+                            {
+                                $('#employee_home_anchor').click();
                                 $('#task_status_form .alert-block').removeClass('hidden');
                                 $('#task_status_form .alert-block .message').html(data);
                             }
                             else
                             {
-                                $('#task_status_anchor').click();
+                                $('#employee_home_anchor').click();
                                 $('#task_status_form .error-block').removeClass('hidden');
                                 $('#task_status_form .error-block .message').html(data);
                             }
