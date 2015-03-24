@@ -240,8 +240,8 @@ jQuery(function ($) {
         format: 'YYYY-MM-DD',
         separator: ' ~ ',
         locale: {
-            applyLabel: 'Submit',
-            cancelLabel: 'Clear',
+            applyLabel: 'Apply',
+            cancelLabel: 'Cancel',
             fromLabel: 'Start Date',
             toLabel: 'End Date',
             customRangeLabel: 'Custom',
