@@ -70,10 +70,9 @@ jQuery(function ($) {
             $('#task_status_form .error-block').removeClass('hidden');
         },
         submitHandler: function (form) {
-
+            $('#spinning').removeClass('hidden');
             var postData = $(form).serializeArray();
-            var content = $('#editable').html();
-            postData[postData.length] = {name: "description", value: content};
+            
             $.ajax(
                     {
                         url: "task_status.php",
@@ -81,7 +80,8 @@ jQuery(function ($) {
                         data: postData,
                         success: function (data, textStatus, jqXHR)
                         {
-                            alert(data);
+                            //alert(data);
+                            $('#spinning').addClass('hidden');
                             if ($.trim(data) == "Task status updated.")
                             {
                                 $('#employee_home_anchor').click();

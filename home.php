@@ -329,7 +329,7 @@ if ($stmt = mysqli_query($conn, $query)) {
                                                     <div class="space-4"></div>
                                                     <div id="spinning" class="row hidden">
                                                         <h3 class="header smaller lighter grey">
-                                                            Processing . . 
+                                                            Processing Request. . 
                                                             <i class="icon-spinner icon-spin orange bigger-125"></i>                                                            
                                                         </h3>
                                                     </div>
@@ -630,7 +630,7 @@ if ($stmt = mysqli_query($conn, $query)) {
                                                         <div class="space-4"></div>
                                                         <div id="spinning2" class="row hidden">
                                                             <h3 class="header smaller lighter grey">
-                                                                Processing . . 
+                                                                Processing Request. . 
                                                                 <i class="icon-spinner icon-spin orange bigger-125"></i>                                                            
                                                             </h3>
                                                         </div>
@@ -974,7 +974,7 @@ if ($stmt = mysqli_query($conn, $query)) {
                                                     <div class="space-4"></div>
                                                     <div id="spinning3" class="row hidden">
                                                         <h3 class="header smaller lighter grey">
-                                                            Processing . . 
+                                                            Processing Request. . 
                                                             <i class="icon-spinner icon-spin orange bigger-125"></i>                                                            
                                                         </h3>
                                                     </div>

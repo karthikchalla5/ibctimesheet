@@ -49,7 +49,7 @@ if (mysqli_query($conn, $sql)) {
                     $TL_email = $r['official_mail_id'];
 
                     if ($TL_email != NULL) {
-                        $body = "Hello, " . $TL_name . "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br> <p>status of <b>" . $task_name . "</b>from <b>" . $project_name . "</b> project is completed .</p><br> <br><br> <br>Thanks & Regards <br> IDEABYTES Team.";
+                        $body = "Hello, " . $TL_name . "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br> <p>status of <b>" . $task_name . "</b> from <b>" . $project_name . "</b> project is completed .</p><br> <br><br> <br>Thanks & Regards <br> IDEABYTES Team.";
 
                         $mail->IsSMTP();                              // tell the class to use SMTP
                         $mail->SMTPAuth = true;

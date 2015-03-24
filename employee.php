@@ -413,6 +413,13 @@ if (isset($_SESSION['emp_id'])) {
                                                                 </div>
                                                             </div>
                                                             <div class="space-4"></div>
+                                                            <div id="spinning" class="row hidden">
+                                                                <h3 class="header smaller lighter grey">
+                                                                    Processing Request. . 
+                                                                    <i class="icon-spinner icon-spin orange bigger-125"></i>                                                            
+                                                                </h3>
+                                                            </div>                                                            
+                                                            <div class="space-4"></div>
                                                             <div id="error8" class="error-block alert alert-danger hidden">
                                                                 <i class="icon-remove"></i> <span class="message">  </span>
                                                             </div> 
