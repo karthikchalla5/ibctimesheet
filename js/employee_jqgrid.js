@@ -215,7 +215,7 @@ jQuery(function ($) {
     }
 
     $('#date_range').daterangepicker({
-        startDate: moment(),//.subtract(29, 'days'),
+        startDate: moment().subtract(29, 'days'),
         endDate: moment(),
         //minDate: '01/01/2012',
         //maxDate: '12/31/2015',
