@@ -326,9 +326,7 @@ if (isset($_SESSION['emp_id'])) {
     <!-- inline scripts related to this page -->
 
     <script src="assets/js/jquery.validate.min.js"></script>
-    <script src="js/employee_jqgrid.js"></script>
-    <script src="js/task_status.js"></script>
-    <script src="js/ajax_calls_all.js"></script>    
+    <script src="js/employee_profile.js"></script>   
     <!-- end basic script code -->
 
 </body>
