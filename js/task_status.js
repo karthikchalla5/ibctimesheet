@@ -69,8 +69,8 @@ jQuery(function ($) {
         invalidHandler: function (event, validator) {
             $('#task_status_form .error-block').removeClass('hidden');
         },
-        submitHandler: function (form) {            
-            
+        submitHandler: function (form) {
+
             $('#spinning').removeClass('hidden');
             var postData = $(form).serializeArray();
 
