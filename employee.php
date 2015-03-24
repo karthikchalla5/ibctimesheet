@@ -278,7 +278,7 @@ if (isset($_SESSION['emp_id'])) {
                                                                         </button>
                                                                         <button type="reset" id="employee_search_clear" class="btn btn-sm btn-success">
                                                                             Reset
-                                                                            <i class="icon-arrow-right icon-on-right bigger-110"></i>
+                                                                            <i class="icon-undo icon-on-undo bigger-110"></i>
                                                                         </button>
                                                                     </div>                                                                    
                                                                 </div>

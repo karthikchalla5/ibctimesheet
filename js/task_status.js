@@ -11,7 +11,7 @@ jQuery(function ($) {
             $('#mail_password').addClass('hidden')
         }
     });
-
+    
     $('#task_status_form').validate({
         errorElement: 'div',
         errorClass: 'help-block',

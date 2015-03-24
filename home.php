@@ -5,7 +5,7 @@ if (isset($_SESSION['emp_id'])) {
     $emp_id = $_SESSION['emp_id'];
     if (isset($_SESSION['designation'])) {
         if ($_SESSION['designation'] != 'Admin') {
-            if ($_SESSION['deignation'] != 'Manager') {
+            if ($_SESSION['designation'] != 'Manager') {
                 header("location: ./error-404.php");
             }
         }

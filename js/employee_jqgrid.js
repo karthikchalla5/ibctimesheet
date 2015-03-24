@@ -2,7 +2,7 @@ jQuery(function ($) {
 
     var grid_selector = "#employee-grid-table";
     var pager_selector = "#employee-grid-pager";
-    
+
     jQuery(grid_selector).jqGrid({
         //direction: "rtl",
         defaults: {
@@ -213,6 +213,43 @@ jQuery(function ($) {
     {
         return "<a data-toggle='modal' class='task_status' id='task_status_anchor' href='#task_status' data-todo='{\"project_id\":" + rowObject.project_id + ",\"project_name\":\"" + rowObject.project_name + "\",\"task_id\":" + rowObject.task_id + ",\"task_name\":\"" + rowObject.task_name + "\"}'>" + cellvalue + "</a>";
     }
+
+    $('#date_range').daterangepicker({
+        startDate: moment(),//.subtract(29, 'days'),
+        endDate: moment(),
+        //minDate: '01/01/2012',
+        //maxDate: '12/31/2015',
+        //dateLimit: {days: 60},
+        showDropdowns: true,
+        showWeekNumbers: true,
+        //timePicker: false,
+        //timePickerIncrement: 1,
+        //timePicker12Hour: true,
+        ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        opens: 'right',
+        buttonClasses: ['btn btn-default'],
+        applyClass: 'btn-sm btn-primary',
+        cancelClass: 'btn-sm',
+        format: 'YYYY-MM-DD',
+        separator: ' ~ ',
+        locale: {
+            applyLabel: 'Submit',
+            cancelLabel: 'Clear',
+            fromLabel: 'Start Date',
+            toLabel: 'End Date',
+            customRangeLabel: 'Custom',
+            daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+            monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            firstDay: 1
+        }
+    });
 
     var timeoutHnd;
     var flAuto = false;
