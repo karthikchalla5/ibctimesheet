@@ -3,8 +3,12 @@ include"connection.php";
 SESSION_start();
 if (isset($_SESSION['emp_id'])) {
     $emp_id = $_SESSION['emp_id'];
+    if (isset($_SESSION['designation'])) {
+        if ($_SESSION['designation'] != 'Developer') {            
+            header("location: ./error-404.php");
+        }
+    }
 } else {
-    echo "mahesh";
     header("location: ./error-500.php");
 }
 ?>
@@ -124,20 +128,20 @@ if (isset($_SESSION['emp_id'])) {
                                 <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
                                 <span class="user-info">
                                     <small>Welcome,</small>
-                                    <?PHP
-                                    $que = mysqli_query($conn, "select * from employee where employee_id='" . $emp_id . "'");
-                                    while ($r = mysqli_fetch_array($que)) {
-                                        echo $r['employee_name'];
-                                    }
-                                    mysqli_free_result($que);
-                                    ?>
+<?PHP
+$que = mysqli_query($conn, "select * from employee where employee_id='" . $emp_id . "'");
+while ($r = mysqli_fetch_array($que)) {
+    echo $r['employee_name'];
+}
+mysqli_free_result($que);
+?>
                                 </span>
 
                                 <i class="icon-caret-down"></i>
                             </a>
 
                             <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                                
+
                                 <li>
                                     <a href="employee_profile.php">
                                         <i class="icon-user"></i>
@@ -349,10 +353,10 @@ if (isset($_SESSION['emp_id'])) {
                                                                     <br>
                                                                     <select id="hours"   name="hours" autocomplete="on"/>
                                                                     <option value="">HH   </option>
-                                                                    <?PHP
-                                                                    for ($i = 0; $i <= 24; $i = $i + 1) {
-                                                                        $value = $i;
-                                                                        ?>
+<?PHP
+for ($i = 0; $i <= 24; $i = $i + 1) {
+    $value = $i;
+    ?>
                                                                         <option value="<?PHP echo $value ?>"><?PHP echo $i ?></option>
                                                                         <?PHP
                                                                     }
@@ -361,14 +365,14 @@ if (isset($_SESSION['emp_id'])) {
 
                                                                     <select id="minutes"   name="minutes" autocomplete="on"/>
                                                                     <option value="00">MM   </option>
-                                                                    <?PHP
-                                                                    for ($i = 0; $i <= 60; $i = $i + 5) {
-                                                                        if ($i < 10) {
-                                                                            $value = $i = "0" . $i;
-                                                                        } else {
-                                                                            $value = $i;
-                                                                        }
-                                                                        ?>
+<?PHP
+for ($i = 0; $i <= 60; $i = $i + 5) {
+    if ($i < 10) {
+        $value = $i = "0" . $i;
+    } else {
+        $value = $i;
+    }
+    ?>
                                                                         <option value="<?PHP echo $value ?>"><?PHP echo $i ?></option>
                                                                         <?PHP
                                                                     }

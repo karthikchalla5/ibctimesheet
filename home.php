@@ -3,6 +3,13 @@ include"connection.php";
 SESSION_start();
 if (isset($_SESSION['emp_id'])) {
     $emp_id = $_SESSION['emp_id'];
+    if (isset($_SESSION['designation'])) {
+        if ($_SESSION['designation'] != 'Admin') {
+            if ($_SESSION['deignation'] != 'Manager') {
+                header("location: ./error-404.php");
+            }
+        }
+    }
 } else {
     echo "mahesh";
     header("location: ./error-500.php");
@@ -120,18 +127,18 @@ if (isset($_SESSION['emp_id'])) {
                                 <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
                                 <span class="user-info">
                                     <small>Welcome,</small>
-                                    <?PHP
-                                    $que = mysqli_query($conn, "select * from employee where employee_id='" . $emp_id . "'");
-                                    while ($r = mysqli_fetch_array($que)) {
-                                        echo $r['employee_name'];
-                                    }
-                                    mysqli_free_result($que);
-                                    ?>
+<?PHP
+$que = mysqli_query($conn, "select * from employee where employee_id='" . $emp_id . "'");
+while ($r = mysqli_fetch_array($que)) {
+    echo $r['employee_name'];
+}
+mysqli_free_result($que);
+?>
                                 </span>
                                 <i class="icon-caret-down"></i>
                             </a>
                             <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                                
+
                                 <li>
                                     <a href="employee_profile.php">
                                         <i class="icon-user"></i>
@@ -274,13 +281,13 @@ if (isset($_SESSION['emp_id'])) {
                                                             <div class="col-sm-2" style="text-align:left"><label class="control-label"><b>Designation <span class="red">*</span>: </b></label></div>
                                                             <div class="col-sm-2" style="text-align:left"><select id="form-field-icon-2" style="width:168px; height:31px;" name="designation">
                                                                     <option value="">Select   </option>
-                                                                    <?PHP
-                                                                    $query = "select * from designation ";
-                                                                    if ($stmt = mysqli_query($conn, $query)) {
-                                                                        while ($row = mysqli_fetch_array($stmt)) {
-                                                                            $desg_value = $row['designation_id'];
-                                                                            $desg_name = $row['designation'];
-                                                                            ?>
+<?PHP
+$query = "select * from designation ";
+if ($stmt = mysqli_query($conn, $query)) {
+    while ($row = mysqli_fetch_array($stmt)) {
+        $desg_value = $row['designation_id'];
+        $desg_name = $row['designation'];
+        ?>
                                                                             <option value="<?PHP echo $desg_value ?>"><?PHP echo $desg_name ?></option>
                                                                             <?PHP
                                                                         }
@@ -386,13 +393,13 @@ if (isset($_SESSION['emp_id'])) {
                                                             <div class="col-sm-2" style="text-align:left">
                                                                 <select id="form-field-icon-7" style="width:168px; height:31px;" name="project_manager">
                                                                     <option value="">Select   </option>
-                                                                    <?PHP
-                                                                    $query = "select * from employee where designation_id='3' OR designation_id='4'";
-                                                                    if ($stmt = mysqli_query($conn, $query)) {
-                                                                        while ($row = mysqli_fetch_array($stmt)) {
-                                                                            $emp_value = $row['employee_id'];
-                                                                            $emp_name = $row['employee_name'];
-                                                                            ?>
+<?PHP
+$query = "select * from employee where designation_id='3' OR designation_id='4'";
+if ($stmt = mysqli_query($conn, $query)) {
+    while ($row = mysqli_fetch_array($stmt)) {
+        $emp_value = $row['employee_id'];
+        $emp_name = $row['employee_name'];
+        ?>
                                                                             <option value="<?PHP echo $emp_value ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?PHP echo $emp_name ?></option>
                                                                             <?PHP
                                                                         }
@@ -492,13 +499,13 @@ if (isset($_SESSION['emp_id'])) {
                                                             <div class="col-sm-5" style="text-align:left" >
                                                                 <select style="width:100%; height:31px;" id="form-field-1" name="assign_project_id" >
                                                                     <option value="">Select   </option>
-                                                                    <?PHP
-                                                                    $query = "select * from project ";
-                                                                    if ($stmt = mysqli_query($conn, $query)) {
-                                                                        while ($row = mysqli_fetch_array($stmt)) {
-                                                                            $project_value = $row['project_id'];
-                                                                            $project_name = $row['project_name'];
-                                                                            ?>
+<?PHP
+$query = "select * from project ";
+if ($stmt = mysqli_query($conn, $query)) {
+    while ($row = mysqli_fetch_array($stmt)) {
+        $project_value = $row['project_id'];
+        $project_name = $row['project_name'];
+        ?>
                                                                             <option value="<?PHP echo $project_value ?>"><?PHP echo $project_name ?></option>
                                                                             <?PHP
                                                                         }
@@ -540,66 +547,66 @@ if (isset($_SESSION['emp_id'])) {
                                                                                     </tr>
                                                                                 </thead>
                                                                                 <tbody>
-                                                                                    <?PHP
-                                                                                    $query = "select * from employee ";
-                                                                                    if ($stmt = mysqli_query($conn, $query)) {
-                                                                                        while ($row = mysqli_fetch_array($stmt)) {
-                                                                                            ?>
+<?PHP
+$query = "select * from employee ";
+if ($stmt = mysqli_query($conn, $query)) {
+    while ($row = mysqli_fetch_array($stmt)) {
+        ?>
                                                                                             <tr>
-                                                                                                <?php
-                                                                                                $employee_value = $row['employee_id'];
-                                                                                                $employee_name = $row['employee_name'];
-                                                                                                ?>
+                                                                                            <?php
+                                                                                            $employee_value = $row['employee_id'];
+                                                                                            $employee_name = $row['employee_name'];
+                                                                                            ?>
 
                                                                                                 <td>
                                                                                                     <input name="employee[]" id="form-field-2" class=hidden  value="<?PHP echo $employee_value ?>">
                                                                                                     <input name="employee_id[]" id="form-field-2" class="checkbox  ace ace-checkbox-2" type="checkbox" value="<?PHP echo $employee_value ?>">
                                                                                                     <span class="lbl"> <?php echo $employee_name ?></span>
                                                                                                 </td>																								
-                                                                                                <?php
-                                                                                                $sql1 = "select designation from designation where designation_id='" . $row['designation_id'] . "'";
-                                                                                                $employee_designation = "";
-                                                                                                if ($stmt1 = mysqli_query($conn, $sql1)) {
-                                                                                                    while ($row1 = mysqli_fetch_array($stmt1)) {
-                                                                                                        $employee_designation = $row1["designation"];
-                                                                                                        ?>
+        <?php
+        $sql1 = "select designation from designation where designation_id='" . $row['designation_id'] . "'";
+        $employee_designation = "";
+        if ($stmt1 = mysqli_query($conn, $sql1)) {
+            while ($row1 = mysqli_fetch_array($stmt1)) {
+                $employee_designation = $row1["designation"];
+                ?>
                                                                                                         <td>
                                                                                                             <label>
-                                                                                                                <?php echo $employee_designation ?></label>
+                <?php echo $employee_designation ?></label>
                                                                                                         </td>
-                                                                                                        <?php
-                                                                                                    }
-                                                                                                    mysqli_free_result($stmt1);
-                                                                                                }
-                                                                                                ?>	
+                                                                                                                <?php
+                                                                                                            }
+                                                                                                            mysqli_free_result($stmt1);
+                                                                                                        }
+                                                                                                        ?>	
                                                                                                 <td align="center">
                                                                                                     <select style="width:100%; height:31px;" id="form-field-3" name="role[]" >
                                                                                                         <option value="0"> Select</option>
-                                                                                                        <?php
-                                                                                                        $query2 = "select * from designation where designation_id=1 OR designation_id=2 ";
-                                                                                                        $role_value = "";
-                                                                                                        $role_name = "";
-                                                                                                        if ($stmt2 = mysqli_query($conn, $query2)) {
-                                                                                                            while ($row2 = mysqli_fetch_array($stmt2)) {
-                                                                                                                $role_value = $row2['designation_id'];
-                                                                                                                $role_name = $row2['designation'];
-                                                                                                                ?>
+        <?php
+        $query2 = "select * from designation where designation_id=1 OR designation_id=2 ";
+        $role_value = "";
+        $role_name = "";
+        if ($stmt2 = mysqli_query($conn, $query2)) {
+            while ($row2 = mysqli_fetch_array($stmt2)) {
+                $role_value = $row2['designation_id'];
+                $role_name = $row2['designation'];
+                ?>
                                                                                                                 <option value="<?php echo $role_value ?>">
-                                                                                                                    <?php echo $role_name ?></option>
+                                                                                                                <?php echo $role_name ?></option>
 
-                                                                                                                <?php
+                                                                                                                    <?php
+                                                                                                                }
+                                                                                                                mysqli_free_result($stmt2);
                                                                                                             }
-                                                                                                            mysqli_free_result($stmt2);
-                                                                                                        }
-                                                                                                        ?>	
+                                                                                                            ?>	
                                                                                                     </select>
                                                                                                 </td>
                                                                                             </tr>
-                                                                                            <?php
-                                                                                        }
-                                                                                        mysqli_free_result($stmt);
-                                                                                    }
-                                                                                    ?>
+        <?php
+    }
+    mysqli_free_result($stmt);
+}
+?>
                                                                                 </tbody>
                                                                             </table>
                                                                         </div>
@@ -664,13 +671,13 @@ if (isset($_SESSION['emp_id'])) {
                                                                         <div class="col-sm-8" style="text-align:left" >
                                                                             <select style="width:500px; height:31px;" id="project_id" name="project_id">
                                                                                 <option value="">Select</option>
-                                                                                <?PHP
-                                                                                $query = "select * from project ";
-                                                                                if ($stmt = mysqli_query($conn, $query)) {
-                                                                                    while ($row = mysqli_fetch_array($stmt)) {
-                                                                                        $project_value = $row['project_id'];
-                                                                                        $project_name = $row['project_name'];
-                                                                                        ?>
+<?PHP
+$query = "select * from project ";
+if ($stmt = mysqli_query($conn, $query)) {
+    while ($row = mysqli_fetch_array($stmt)) {
+        $project_value = $row['project_id'];
+        $project_name = $row['project_name'];
+        ?>
                                                                                         <option value="<?PHP echo $project_value ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?PHP echo $project_name ?></option>
                                                                                         <?PHP
                                                                                     }
@@ -784,10 +791,10 @@ if (isset($_SESSION['emp_id'])) {
                                                                                         <div class="col-sm-8" style="text-align:left" >
                                                                                             <select style="width:150px; height:31px;" id="form-field-10" name="progress">
                                                                                                 <option value="">Select   </option>
-                                                                                                <?PHP
-                                                                                                for ($i = 0; $i <= 100; $i = $i + 5) {
-                                                                                                    $value = $i;
-                                                                                                    ?>
+<?PHP
+for ($i = 0; $i <= 100; $i = $i + 5) {
+    $value = $i;
+    ?>
                                                                                                     <option value="<?PHP echo $value ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?PHP echo $i . "%" ?></option>
                                                                                                     <?PHP
                                                                                                 }
@@ -886,13 +893,13 @@ if (isset($_SESSION['emp_id'])) {
                                                             <div class="col-sm-5" style="text-align:left" >
                                                                 <select style="width:100%; height:31px;" id="assign_project_task_id" name="assign_project_task_id" >
                                                                     <option value="">Select</option>
-                                                                    <?PHP
-                                                                    $query = "select * from project ";
-                                                                    if ($stmt = mysqli_query($conn, $query)) {
-                                                                        while ($row = mysqli_fetch_array($stmt)) {
-                                                                            $project_value = $row['project_id'];
-                                                                            $project_name = $row['project_name'];
-                                                                            ?>
+<?PHP
+$query = "select * from project ";
+if ($stmt = mysqli_query($conn, $query)) {
+    while ($row = mysqli_fetch_array($stmt)) {
+        $project_value = $row['project_id'];
+        $project_name = $row['project_name'];
+        ?>
                                                                             <option value="<?PHP echo $project_value ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?PHP echo $project_name ?></option>
                                                                             <?PHP
                                                                         }

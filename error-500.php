@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>500 Error Page - Result Reporting System</title>
+        <title>500 Error Page - Ideabytes Credential Timesheet</title>
 
         <meta name="description" content="500 Error Page" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
