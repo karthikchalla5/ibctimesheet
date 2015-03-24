@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2015 at 06:42 AM
+-- Generation Time: Mar 24, 2015 at 11:51 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
 INSERT INTO `employee` (`employee_id`, `employee_name`, `designation_id`, `official_mail_id`, `personal_mail_id`, `contact_number`, `address`) VALUES
 ('0001', 'Mahesh_admin', 4, 'mahesh@gmail.com', 'mahesh@gmail.com', 7897897898, 'jntuyhyd'),
 ('1115', 'Challa V N Karthik Kumar', 3, 'polamaheshbabu@gmail.com', 'kumar159753@gmail.com', 9494319679, 'Room No. 119\nGodavari Hostel, JNTU, Kukatpally'),
-('11156', 'avinash', 1, 'kumar159753@gmail.com', 'kumar159753@gmail.com', 9493196794, 'Room No. 119\nGodavari Hostel, JNTU, Kukatpally'),
+('11156', 'Avinash', 1, 'kumar159753@gmail.com', 'kumar159753@gmail.com', 9493196794, 'Room No. 119\nGodavari Hostel, JNTU, Kukatpally'),
 ('1116', 'mahesh', 2, 'mahesh.pola@ideabytes.com', 'princemahesh134@gmail.com', 94943196679, 'jntuh kukatpally');
 
 -- --------------------------------------------------------
@@ -128,7 +128,9 @@ INSERT INTO `project_employee` (`project_id`, `employee_id`, `role`) VALUES
 (1, '0001', 1),
 (1, '1115', 1),
 (1, '11156', 1),
-(1, '1116', 2);
+(1, '1116', 1),
+(2, '11156', 1),
+(2, '1116', 2);
 
 -- --------------------------------------------------------
 
@@ -165,7 +167,8 @@ INSERT INTO `project_employee_task` (`project_id`, `task_id`, `employee_id`, `as
 (1, 15, '11156', ''),
 (2, 16, '1116', ''),
 (1, 1, '11156', ''),
-(1, 18, '1116', '');
+(1, 18, '1116', ''),
+(2, 7, '11156', '');
 
 -- --------------------------------------------------------
 
@@ -221,7 +224,7 @@ INSERT INTO `tasks` (`project_id`, `task_id`, `task_name`, `status`, `priority`,
 (1, 4, 'Task4', 'completed', 'Urgent', '', '00:00:00.000000', '2015-02-16', '2015-03-18', ''),
 (1, 5, 'Task5', 'completed', 'High', '', '00:00:00.000000', '2015-02-23', '2015-03-19', ''),
 (2, 6, 'Task1', 'completed', 'Low', '', '00:00:00.000000', '2015-02-05', '2015-03-13', ''),
-(2, 7, 'Task2', 'completed', 'Medium', '', '00:00:00.000000', '2015-02-08', '2015-03-14', ''),
+(2, 7, 'Task2', 'Assigned', 'Medium', '', '00:00:00.000000', '2015-02-08', '2015-03-14', ''),
 (2, 8, 'Task3', 'completed', 'High', '', '00:00:00.000000', '2015-02-12', '2015-03-17', ''),
 (2, 9, 'Task4', 'completed', 'Urgent', '', '00:00:00.000000', '2015-02-26', '2015-03-20', ''),
 (2, 10, 'Task5', 'completed', 'Medium', '', '00:00:00.000000', '2015-02-27', '2015-03-21', ''),
@@ -394,7 +397,19 @@ INSERT INTO `task_status` (`project_id`, `task_id`, `note`, `date`, `time`, `typ
 (2, 8, '', '2015-03-24', '13:00', 'analysis', 'completed'),
 (1, 15, '', '2015-03-24', '13:00', 'analysis', 'inprogress'),
 (2, 8, '', '2015-03-24', '15:00', 'coding', 'completed'),
-(2, 8, '', '2015-03-24', '16:00', 'coding', 'completed');
+(2, 8, '', '2015-03-24', '16:00', 'coding', 'completed'),
+(2, 8, '', '2015-03-24', '17:00', 'analysis', 'completed'),
+(2, 8, '', '2015-03-24', '5:00', 'analysis', 'completed'),
+(2, 8, '', '2015-03-24', '5:00', 'analysis', 'completed'),
+(2, 8, '', '2015-03-24', '1:00', 'coding', 'completed'),
+(2, 8, '', '2015-03-24', '17:00', 'coding', 'inprogress'),
+(2, 6, '', '2015-03-24', '15:00', 'coding', 'completed'),
+(2, 8, '', '2015-03-24', '17:00', 'coding', 'completed'),
+(2, 8, '', '2015-03-24', '17:00', 'coding', 'inprogress'),
+(2, 8, '', '2015-03-24', '17:00', 'coding', 'inprogress'),
+(2, 8, '', '2015-03-24', '17:00', 'coding', 'completed'),
+(2, 8, '', '2015-03-24', '17:00', 'coding', 'completed'),
+(2, 8, '', '2015-03-24', '17:00', 'coding', 'completed');
 
 --
 -- Indexes for dumped tables

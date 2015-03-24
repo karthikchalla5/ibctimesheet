@@ -50,6 +50,7 @@ if ($result->num_rows > 0) {
                 if (($user_role == "2") OR ( $user_designation == "Team leader")) {
                     $user_designation = "Team leader";
                     echo $user_designation;
+                    $_SESSION['designation'] = $user_designation;
                 } else {
                     echo $user_designation;
                 }
