@@ -185,7 +185,7 @@ jQuery(function ($) {
                         data: postData,
                         success: function (data, textStatus, jqXHR)
                         {
-                            //alert(data);		
+                            alert(data);		
                             if ($.trim(data) == "Task status updated.")
                             {
                                 $('#employee_home_anchor').click();
