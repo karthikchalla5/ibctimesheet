@@ -143,7 +143,7 @@ if (isset($_SESSION['emp_id'])) {
                             <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 
                                 <li>
-                                    <a href="employee_profile.php">
+                                    <a id="employee_profile1" href="employee_profile.php">
                                         <i class="icon-user"></i>
                                         Profile
                                     </a>
@@ -505,6 +505,7 @@ if (isset($_SESSION['emp_id'])) {
     <script src="js/employee_jqgrid.js"></script>
     <script src="js/task_status.js"></script>
     <script src="js/ajax_calls_all.js"></script>
+    <script src="js/employee_profile.js"></script>
     <!--script src="js/user_form_validations.js"></script>
     <script src="js/project_form_validations.js"></script>
     <script src="js/task_form_validations.js"></script>

@@ -140,7 +140,7 @@ mysqli_free_result($que);
                             <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 
                                 <li>
-                                    <a href="employee_profile.php">
+                                    <a id="employee_profile" href="employee_profile.php">
                                         <i class="icon-user"></i>
                                         Profile
                                     </a>

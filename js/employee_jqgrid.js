@@ -2,7 +2,7 @@ jQuery(function ($) {
 
     var grid_selector = "#employee-grid-table";
     var pager_selector = "#employee-grid-pager";
-
+    
     jQuery(grid_selector).jqGrid({
         //direction: "rtl",
         defaults: {
